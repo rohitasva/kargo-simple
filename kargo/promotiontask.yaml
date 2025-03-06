@@ -38,34 +38,34 @@ spec:
       path: ./src
       message: ${{ task.outputs['update-image'].commitMessage }}
   # Push the changes to the Git repository.
-  #- uses: git-push
-  #  if: ${{ vars.openpr != 'true' }}
-  #  config:
-  #    path: ./src
-
-  # Push the changes to a newly created branch in the Git repository.
   - uses: git-push
-    if: ${{ vars.openpr == 'true' }}
-    as: push
+    if: ${{ vars.openpr != 'true' }}
     config:
       path: ./src
-      generateTargetBranch: true
+
+  # Push the changes to a newly created branch in the Git repository.
+  # - uses: git-push
+  #  if: ${{ vars.openpr == 'true' }}
+  #  as: push
+  #  config:
+  #    path: ./src
+  #    generateTargetBranch: true
   # Open a pull request to merge the changes into the main branch.
-  - uses: git-open-pr
-    as: open-pr
-    if: ${{ vars.openpr == 'true' }}
-    config:
-      repoURL: ${{ vars.repoURL }}
-      createTargetBranch: true
-      sourceBranch: ${{ task.outputs.push.branch }}
-      targetBranch: ${{ vars.branch }}
+  #- uses: git-open-pr
+  #  as: open-pr
+  #  if: ${{ vars.openpr == 'true' }}
+  #  config:
+  #    repoURL: ${{ vars.repoURL }}
+  #    createTargetBranch: true
+  #    sourceBranch: ${{ task.outputs.push.branch }}
+  #    targetBranch: ${{ vars.branch }}
   # Wait for the pull request to be merged.
-  - uses: git-wait-for-pr
-    as: wait-for-pr
-    if: ${{ vars.openpr == 'true' }}
-    config:
-      repoURL: ${{ vars.repoURL }}
-      prNumber: ${{ task.outputs['open-pr'].prNumber }}
+  #- uses: git-wait-for-pr
+  #  as: wait-for-pr
+  #  if: ${{ vars.openpr == 'true' }}
+  #  config:
+  #    repoURL: ${{ vars.repoURL }}
+  #    prNumber: ${{ task.outputs['open-pr'].prNumber }}
 
   # If you have an Argo CD Application that should be synced after the Git
   # repository is updated, uncomment the following lines and specify the
