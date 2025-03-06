@@ -6,7 +6,7 @@ metadata:
 spec:
   vars:
   - name: repoURL
-    value: https://gitea.cnoe.localhost.me:8443/rohitasva/kargo-simple.git
+    value: https://github.com/rohitasva/kargo-simple.git
   - name: branch
     value: main
   - name: image
