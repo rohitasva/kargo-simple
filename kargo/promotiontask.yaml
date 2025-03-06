@@ -6,11 +6,11 @@ metadata:
 spec:
   vars:
   - name: repoURL
-    value: https://github.com/akuity/kargo-simple.git
+    value: https://gitea.cnoe.localhost.me:8443/rohitasva/kargo-simple.git
   - name: branch
     value: main
   - name: image
-    value: ghcr.io/akuity/guestbook
+    value: rohitasva/guestbook
   - name: openpr
     value: "false"
   steps:
