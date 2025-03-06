@@ -38,10 +38,10 @@ spec:
       path: ./src
       message: ${{ task.outputs['update-image'].commitMessage }}
   # Push the changes to the Git repository.
-  - uses: git-push
-    if: ${{ vars.openpr != 'true' }}
-    config:
-      path: ./src
+  #- uses: git-push
+  #  if: ${{ vars.openpr != 'true' }}
+  #  config:
+  #    path: ./src
 
   # Push the changes to a newly created branch in the Git repository.
   - uses: git-push
