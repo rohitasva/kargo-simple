@@ -11,8 +11,8 @@ spec:
       elements:
       - location: dev
       - location: staging
-      - location: prod
-      - location: prod-another
+      - location: prod-region1
+      - location: prod-region2
   template:
     metadata:
       name: 'guestbook-{{.location}}'

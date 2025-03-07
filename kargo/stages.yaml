@@ -44,7 +44,7 @@ spec:
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
-  name: prod
+  name: prod-region1
   namespace: kargo-simple
   annotations:
     kargo.akuity.io/color: violet
@@ -68,7 +68,7 @@ spec:
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
-  name: prod-another
+  name: prod-region2
   namespace: kargo-simple
   annotations:
     kargo.akuity.io/color: violet
