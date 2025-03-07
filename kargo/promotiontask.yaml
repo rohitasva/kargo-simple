@@ -76,3 +76,4 @@ spec:
   #    - name: guestbook-${{ ctx.stage }}
   #      sources:
   #      - repoURL: ${{ vars.repoURL }}
+  #        desiredRevision: ${{ outputs.commit.commit }}
