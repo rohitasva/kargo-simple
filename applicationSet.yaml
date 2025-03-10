@@ -17,7 +17,7 @@ spec:
     metadata:
       name: 'guestbook-{{.location}}'
       annotations:
-        kargo.utility.io/authorized-stage: kargo-simple
+        kargo.utility.io/authorized-stage: kargo-simple:{{ .location }}
     spec:
       project: default
       source:
