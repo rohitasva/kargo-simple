@@ -74,5 +74,6 @@ spec:
     config:
       apps:
       - name: guestbook-${{ ctx.stage }}
+        namespace: guestbook-${{ ctx.stage }}
         sources:
         - repoURL: ${{ vars.repoURL }}
