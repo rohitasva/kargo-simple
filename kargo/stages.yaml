@@ -40,7 +40,7 @@ spec:
       - task:
           name: promote
 ---
-piVersion: kargo.akuity.io/v1alpha1
+apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
   name: ab-test-a
