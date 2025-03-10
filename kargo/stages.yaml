@@ -43,7 +43,7 @@ spec:
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
-  name: ab-test-a
+  name: analysis
   namespace: kargo-simple
   annotations:
     kargo.akuity.io/color: yellow
@@ -81,7 +81,7 @@ spec:
       name: guestbook
     sources:
       stages:
-      - ab-test-a
+      - analysis
   promotionTemplate:
     spec:
       steps:
@@ -105,7 +105,7 @@ spec:
       name: guestbook
     sources:
       stages:
-      - staging
+      - analysis
   promotionTemplate:
     spec:
       steps:
