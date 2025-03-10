@@ -81,7 +81,7 @@ spec:
       name: guestbook
     sources:
       stages:
-      - staging
+      - ab-test-a
   promotionTemplate:
     spec:
       steps:
