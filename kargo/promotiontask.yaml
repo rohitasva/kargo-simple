@@ -77,4 +77,4 @@ spec:
         sources:
         - repoURL: ${{ vars.repoURL }}
           desiredRevision: ${{ task.outputs['commit'].commit }}
-          updateTargetRevision: true
+        
