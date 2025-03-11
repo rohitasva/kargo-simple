@@ -7,14 +7,15 @@ metadata:
   namespace: kargo-simple
 spec:
   args:
-  - name: pokemon
+  - name: service-name
+    value: guestbook-simple.guestbook-simple-analysis.svc.cluster.local
   metrics:
   - name: pokemon-xp
     interval: 5s
     count: 5
-    successCondition: result < 200
+    successCondition: result == "80"
     failureLimit: 3
     provider:
       web:
-        url: https://pokeapi.co/api/v2/pokemon/{{args.pokemon}}
-        jsonPath: "{$.base_experience}"
+        url: http://{{args.service-name}}/env
+        jsonPath: "{$.GUESTBOOK_SIMPLE_PORT_80_TCP_PORT}"
