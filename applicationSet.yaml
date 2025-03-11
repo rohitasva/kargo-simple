@@ -7,27 +7,25 @@ spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
-  - list:
-      elements:
-      - location: dev
-      - location: staging
-      - location: analysis
-      - location: prod-region1
-      - location: prod-region2
+  - git:
+      repoURL: https://github.com/rohitasva/kargo-simple.git
+      revision: HEAD
+      directories:
+      - path: env/*
   template:
     metadata:
-      name: 'guestbook-{{.location}}'
+      name: 'guestbook-{{path.basename}}'
       annotations:
-        kargo.akuity.io/authorized-stage: kargo-simple:{{ .location }}
+        kargo.akuity.io/authorized-stage: kargo-simple:{{path.basename}}
     spec:
       project: default
       source:
         repoURL: https://github.com/rohitasva/kargo-simple.git
-        targetRevision: HEAD
-        path: 'env/{{.location}}'
+        targetRevision: env/{{path.basename}}
+        path: './'
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'guestbook-{{.location}}'
+        namespace: 'guestbook-{{path.basename}}'
       syncPolicy:
         automated:
           selfHeal: true
