@@ -24,7 +24,7 @@ spec:
         targetRevision: env/{{path.basename}}
         path: './'
       destination:
-        server: https://kubernetes.default.svc
+        server: http://cluster-local:8001
         namespace: 'guestbook-{{path.basename}}'
       syncPolicy:
         automated:
