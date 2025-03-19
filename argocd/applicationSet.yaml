@@ -14,18 +14,18 @@ spec:
       - path: env/*
   template:
     metadata:
-      name: guestbook-'{{.path.basename}}'
+      name: guestbook-'{{base .path.path}}'
       annotations:
-        kargo.akuity.io/authorized-stage: kargo-simple:'{{.path.basename}}'
+        kargo.akuity.io/authorized-stage: kargo-simple:'{{base .path.path}}'
     spec:
       project: default
       source:
         repoURL: https://github.com/rohitasva/kargo-simple.git
-        targetRevision: env/'{{.path.basename}}'
+        targetRevision: env/'{{base .path.path}}'
         path: './'
       destination:
         server: http://cluster-local:8001
-        namespace: guestbook-'{{.path.basename}}'
+        namespace: guestbook-'{{base .path.path}}'
       syncPolicy:
         automated:
           selfHeal: true
