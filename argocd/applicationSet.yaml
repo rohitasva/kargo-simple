@@ -24,7 +24,7 @@ spec:
         targetRevision: env/{{base .path.path}}
         path: './'
       destination:
-        server: http://cluster-local:8001
+        server: local
         namespace: guestbook-{{base .path.path}}
       syncPolicy:
         automated:
