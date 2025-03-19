@@ -8,7 +8,7 @@ metadata:
 spec:
   args:
   - name: service-name
-    value: guestbook-simple.guestbook-simple-analysis.svc.cluster.local
+    value: guestbook-simple.guestbook-analysis.svc.cluster.local
   metrics:
   - name: pokemon-xp
     interval: 5s
