@@ -44,7 +44,7 @@ spec:
     - name: pokemon-xp
     args:
     - name: service-name
-      value: guestbook-simple.guestbook-simple-staging.svc.cluster.local
+      value: guestbook-simple.guestbook-staging.svc.cluster.local
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
@@ -71,7 +71,7 @@ spec:
     - name: pokemon-xp
     args:
     - name: service-name
-      value: guestbook-simple.guestbook-simple-analysis.svc.cluster.local
+      value: guestbook-simple.guestbook-analysis.svc.cluster.local
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
