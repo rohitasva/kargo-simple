@@ -6,5 +6,5 @@ metadata:
 spec:
   subscriptions:
   - image:
-      repoURL: rohitasva/guestbook
+      repoURL: ghcr.io/rohitasva/guestbook
       imageSelectionStrategy: SemVer

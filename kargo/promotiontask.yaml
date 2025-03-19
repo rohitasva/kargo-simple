@@ -10,7 +10,7 @@ spec:
   - name: branch
     value: main
   - name: image
-    value: rohitasva/guestbook
+    value: ghcr.io/rohitasva/guestbook
   - name: openpr
     value: "false"
   steps:
@@ -77,4 +77,4 @@ spec:
         sources:
         - repoURL: ${{ vars.repoURL }}
           desiredRevision: ${{ task.outputs['commit'].commit }}
-        
+
