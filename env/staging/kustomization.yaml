@@ -5,4 +5,4 @@ resources:
 namespace: guestbook-staging
 images:
 - name: ghcr.io/rohitasva/guestbook
-  newTag: v0.0.13
+  newTag: v0.0.12
