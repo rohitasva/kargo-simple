@@ -103,7 +103,7 @@ metadata:
   name: prod-region2
   namespace: kargo-simple
   annotations:
-    kargo.akuity.io/color: violet
+    kargo.akuity.io/color: green
 spec:
   requestedFreight:
   - origin:
