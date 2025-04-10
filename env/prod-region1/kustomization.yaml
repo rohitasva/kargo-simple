@@ -5,4 +5,4 @@ resources:
 namespace: guestbook-prod-region1
 images:
 - name: ghcr.io/rohitasva/guestbook
-  newTag: v0.0.14
+  newTag: v0.0.15
