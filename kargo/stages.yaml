@@ -93,9 +93,6 @@ spec:
       steps:
       - task:
           name: promote
-        vars:
-        - name: openpr
-          value: "true"
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
@@ -117,6 +114,3 @@ spec:
       steps:
       - task:
           name: promote
-        vars:
-        - name: openpr
-          value: "true"
