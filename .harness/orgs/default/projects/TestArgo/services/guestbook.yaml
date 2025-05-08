@@ -3,3 +3,7 @@ service:
   identifier: guestbook
   orgIdentifier: default
   projectIdentifier: TestArgo
+  gitOpsEnabled: true
+  serviceDefinition:
+    spec: {}
+    type: Kubernetes
