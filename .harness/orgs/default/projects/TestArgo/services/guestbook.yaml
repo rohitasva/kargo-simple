@@ -1,0 +1,5 @@
+service:
+  name: guestbook
+  identifier: guestbook
+  orgIdentifier: default
+  projectIdentifier: TestArgo
