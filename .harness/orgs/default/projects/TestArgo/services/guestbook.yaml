@@ -5,5 +5,19 @@ service:
   projectIdentifier: TestArgo
   gitOpsEnabled: true
   serviceDefinition:
-    spec: {}
+    spec:
+      manifests:
+        - manifest:
+            identifier: dev
+            type: DeploymentRepo
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: guestbook
+                  gitFetchType: Branch
+                  paths:
+                    - env
+                  branch: main
+                  repoName: kargo-simple
     type: Kubernetes
