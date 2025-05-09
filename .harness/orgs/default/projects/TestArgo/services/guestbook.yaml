@@ -20,4 +20,17 @@ service:
                     - env
                   branch: main
                   repoName: kargo-simple
+        - manifest:
+            identifier: staging
+            type: ReleaseRepo
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: guestbook
+                  gitFetchType: Branch
+                  paths:
+                    - env
+                  branch: main
+                  repoName: kargo-simple
     type: Kubernetes
